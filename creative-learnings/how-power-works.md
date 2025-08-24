@@ -4,6 +4,7 @@ topic: "Education / Indivisualism / National State"
 tags: ["power", "policy", "lecture"]
 date: 2025-08-23
 source: "Lecture by Professor Jiang Xueqin"
+video: "https://www.youtube.com/watch?v=ajFXykT9Joo&ab_channel=PredictiveHistory"
 status: "draft"
 ---
 
