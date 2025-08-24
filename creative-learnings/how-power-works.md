@@ -18,3 +18,11 @@ This lecture revolves around how powerful people really control the middle class
 - Why do we have schools?
 - The move from Communities to Indivisual happyness
 - The idea of Nation state
+
+## 📊 Concept Flow
+```mermaid
+flowchart TD
+    A[Schools] --> B[Move from Communities]
+    B --> C[Individual Happiness]
+    C --> D[Nation-State]
+```
