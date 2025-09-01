@@ -1,0 +1,19 @@
+services:
+  web2:
+    build: .
+    ports:
+      - "5006:5006"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.docusaurus
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - DISABLE_DOCGEN=true
+      - DISABLE_LIVE_PREVIEW=true
+      - DISABLE_SANDPACK=true
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
