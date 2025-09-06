@@ -14,7 +14,7 @@ const thumbsUpDownFeedbackWidget = require("./plugins/thumbs-up-down-feedback-wi
 const siteConfig = {
   title: "Notes",
   tagline: "Personal knowledge base and documentation",
-  url: "https://notes.local",
+  url: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://notes.local",
   baseUrl: "/",
   projectName: "notes",
   organizationName: "personal",

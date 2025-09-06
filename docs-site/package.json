@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 docusaurus build",
+    "build:vercel": "cross-env NODE_OPTIONS=--max_old_space_size=8192 docusaurus build",
     "build:plugins": "sucrase ./plugins -d ./plugins --transforms typescript,imports && npx prettier --write ./plugins",
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
