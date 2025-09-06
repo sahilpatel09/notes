@@ -19,7 +19,7 @@ const siteConfig = {
   projectName: "notes",
   organizationName: "personal",
   trailingSlash: true,
-  favicon: "img/notes-icon.png",
+  favicon: "img/notes-icon.svg",
   scripts: [
     "https://platform.twitter.com/widgets.js",
     {
@@ -39,9 +39,9 @@ const siteConfig = {
       "data-button-image-width": "60px",
       "data-modal-title": "",
       "data-modal-image":
-        "/img/notes-icon.png",
+        "/img/notes-icon.svg",
       "data-project-logo":
-        "/img/notes-logo.png",
+        "/img/notes_logo.svg",
       async: true,
     },
   ],
