@@ -1,6 +1,6 @@
 import Head from "@docusaurus/Head";
 import { FooterRedditIcon as RedditIcon } from "@site/src/refine-theme/icons/footer-reddit";
-import { BlogFooter } from "@site/src/refine-theme/blog-footer";
+import { CommonFooter } from "@site/src/refine-theme/common-footer";
 import { CommonHeader } from "@site/src/refine-theme/common-header";
 import { CommonLayout } from "@site/src/refine-theme/common-layout";
 import { Istanbul500Icon } from "@site/src/refine-theme/icons/500";
@@ -8,13 +8,9 @@ import { GithubIcon } from "@site/src/refine-theme/icons/github";
 import { MailIcon } from "@site/src/refine-theme/icons/mail";
 import { MarkerIcon } from "@site/src/refine-theme/icons/marker";
 import { DiscordIcon, XIcon } from "@site/src/refine-theme/icons/popover";
-import { YCombinatorCircleIcon } from "@site/src/refine-theme/icons/ycombinator-circle";
-import { SenovoIcon } from "@site/src/refine-theme/icons/senovo";
 import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import React from "react";
-import { backedBy } from "../../assets/backed-by";
-import { team } from "../../assets/team";
 import { useColorMode } from "@docusaurus/theme-common";
 import { CommonThemedImage } from "@site/src/refine-theme/common-themed-image";
 
@@ -32,7 +28,7 @@ const About: React.FC = () => {
         <OurTeam />
         <BackedBy />
         <WeAreHere />
-        <BlogFooter />
+        <CommonFooter />
       </div>
     </>
   );
@@ -350,55 +346,8 @@ const OurTeam = () => {
         Our Team
       </h4>
 
-      <div
-        className={clsx(
-          "flex flex-wrap",
-          "justify-center",
-          "gap-8 landing-md:gap-10",
-          "align-top",
-          "not-prose",
-        )}
-      >
-        {team.map(({ name, avatar, role1, linkedin }) => (
-          <a
-            href={linkedin}
-            target="_blank"
-            rel="noreferrer"
-            key={name}
-            className={clsx(
-              "not-prose",
-              "block",
-              "flex justify-start flex-col text-center not-prose",
-              "w-[150px] landing-md:w-[250px]",
-              "hover:no-underline no-underline",
-            )}
-          >
-            <img
-              srcSet={`${avatar} 1500w`}
-              src={avatar}
-              alt={name}
-              className="w-full m-0 mb-6"
-            />
-            <div
-              className={clsx(
-                "text-xs leading-4",
-                "lg:text-base lg:leading-6",
-                "text-gray-900 dark:text-gray-0 font-semibold",
-              )}
-            >
-              {name}
-            </div>
-            <div
-              className={clsx(
-                "text-xs leading-4",
-                "lg:text-base lg:leading-6",
-                "text-gray-500 dark:text-gray-400",
-              )}
-            >
-              {role1}
-            </div>
-          </a>
-        ))}
+      <div className="text-center text-gray-500 dark:text-gray-400">
+        <p>Team information will be added here.</p>
       </div>
     </div>
   );
@@ -466,7 +415,7 @@ const BackedBy = () => {
               "shrink-0",
             )}
           >
-            <YCombinatorCircleIcon />
+            <span className="text-gray-500 dark:text-gray-400">YC</span>
           </div>
           <span
             className={clsx(
@@ -488,9 +437,11 @@ const BackedBy = () => {
               "w-[144px] h-[144px]",
               "md:w-[192px] md:h-[192px]",
               "shrink-0",
+              "bg-gray-100 dark:bg-gray-800",
+              "rounded-lg"
             )}
           >
-            <SenovoIcon />
+            <span className="text-gray-500 dark:text-gray-400">Logo</span>
           </div>
           <span
             className={clsx(
@@ -499,72 +450,13 @@ const BackedBy = () => {
               "font-semibold",
             )}
           >
-            Senovo
+            Notes
           </span>
         </div>
       </div>
 
-      <div
-        className={clsx(
-          "w-full mx-auto",
-          "max-w-[456px] landing-sm:max-w-[720px] landing-lg:max-w-max",
-          "flex flex-wrap",
-          "px-4",
-          "gap-x-8 landing-sm:gap-x-12 landing-md:gap-x-12",
-          "gap-y-6",
-          "align-top",
-          "items-start justify-center",
-        )}
-      >
-        {backedBy.map(({ name, avatar, role1, role2 }) => (
-          <div
-            key={name}
-            className={clsx(
-              "h-full",
-              "flex justify-start flex-col text-center",
-              "w-[120px] landing-sm:w-[160px]",
-            )}
-          >
-            <CommonThemedImage
-              className="w-full not-prose m-0 mb-6"
-              srcDark={avatar.dark}
-              srcLight={avatar.light}
-              srcSetDark={`${avatar.dark} 1500w`}
-              srcSetLight={`${avatar.light} 1500w`}
-              alt={name}
-            />
-            <span
-              className={clsx(
-                "text-xs leading-4",
-                "lg:text-base lg:leading-6",
-                "text-gray-900 dark:text-gray-0 font-semibold",
-              )}
-            >
-              {name}
-            </span>
-            <span
-              className={clsx(
-                "text-xs leading-4",
-                "lg:text-base lg:leading-6",
-                "text-gray-500 dark:text-gray-400",
-              )}
-            >
-              {role1}
-            </span>
-            {role2 && (
-              <span
-                className={clsx(
-                  "text-xs",
-                  "landing-sm:text-sm",
-                  "landing-lg:text-base",
-                  "text-gray-500 dark:text-gray-400",
-                )}
-              >
-                {role2}
-              </span>
-            )}
-          </div>
-        ))}
+      <div className="text-center text-gray-500 dark:text-gray-400">
+        <p>Backers information will be added here.</p>
       </div>
     </div>
   );

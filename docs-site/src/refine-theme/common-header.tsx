@@ -5,14 +5,12 @@ import React, { useState } from "react";
 
 import { HamburgerIcon } from "./icons/hamburger";
 
-import { openFigma } from "../utils/open-figma";
 import { Menu } from "./common-header/menu";
 import { MobileMenuModal } from "./common-header/mobile-menu-modal";
 import { CommonThemeToggle } from "./common-theme-toggle";
 import { TopAnnouncement } from "./top-announcement";
 
-import { LandingGithubStarButton } from "./landing-github-star-button";
-import { RefineLogoIcon } from "./icons/refine-logo";
+import { CommonGithubStarButton } from "./common-github-star-button";
 
 type Props = {
   hasSticky?: boolean;
@@ -80,8 +78,8 @@ export const CommonHeader = ({
             )}
           >
             <div className={clsx("w-[130px]", "landing-lg:w-[200px]")}>
-              <Link to="/" onContextMenu={openFigma}>
-                <RefineLogoIcon className="text-gray-900 dark:text-gray-0" />
+              <Link to="/">
+                <span className="text-gray-900 dark:text-gray-0 text-xl font-bold">Notes</span>
               </Link>
             </div>
             <button
@@ -113,7 +111,7 @@ export const CommonHeader = ({
                 "w-[314px]",
               )}
             >
-              <LandingGithubStarButton />
+              <CommonGithubStarButton />
               <CommonThemeToggle />
             </div>
             <MobileMenuModal

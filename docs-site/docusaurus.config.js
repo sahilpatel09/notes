@@ -84,8 +84,6 @@ const siteConfig = {
             require.resolve("./src/refine-theme/css/fonts.css"),
             require.resolve("./src/refine-theme/css/custom.css"),
             require.resolve("./src/css/custom.css"),
-            require.resolve("./src/css/split-pane.css"),
-            require.resolve("./src/css/demo-page.css"),
           ],
         },
         gtag: {
@@ -132,29 +130,8 @@ const siteConfig = {
       };
     },
     // "./plugins/docgen.js",
-    ...(process.env.DISABLE_BLOG
-      ? []
-      : [
-          [
-            "./plugins/blog-plugin.js",
-            {
-              blogTitle: "Blog",
-              blogDescription:
-                "A resource for Refine, front-end ecosystem, and web development",
-              routeBasePath: "/blog",
-              postsPerPage: 12,
-              blogSidebarTitle: "All posts",
-              blogSidebarCount: 0,
-              feedOptions: {
-                type: "all",
-                copyright: `Copyright © ${new Date().getFullYear()} Notes.`,
-              },
-            },
-          ],
-        ]),
     // "./plugins/clarity.js",
     // "./plugins/ahref.js",
-    "./plugins/templates.js",
     "./plugins/example-redirects.js",
     // "./plugins/tutorial-navigation.js",
     // [

@@ -1,7 +1,6 @@
 import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import React from "react";
-import { openFigma } from "../utils/open-figma";
 
 interface Props {
   className?: string;
@@ -21,7 +20,6 @@ export const DocRefineLogo = ({ className }: Props) => {
       <Link
         to="/"
         className={clsx("no-underline", "flex items-center gap-2")}
-        onContextMenu={openFigma}
       >
         <Logo className="text-gray-900 dark:text-gray-100" />
         <span

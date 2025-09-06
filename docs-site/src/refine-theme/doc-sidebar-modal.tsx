@@ -3,7 +3,6 @@ import { Dialog, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import { CommonHomeButton } from "./common-home-button";
 import { CommonGithubStarButton } from "./common-github-star-button";
-import { RefineLogo } from "./common-refine-logo";
 import { CommonHamburgerIcon } from "./common-hamburger-icon";
 import { useSidebarItems } from "./doc-sidebar";
 import { DocRefineLogo } from "./doc-refine-logo";
@@ -33,7 +32,7 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-0 dark:bg-gray-800" />
+          <div className="fixed inset-0 bg-gray-900/50 dark:bg-gray-900/80 backdrop-blur-sm" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -72,8 +71,11 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
                     "flex-col",
                     "flex-1",
                     "mx-auto",
-                    "rounded-lg",
-                    "border border-gray-300 dark:border-gray-600",
+                    "rounded-xl",
+                    "border border-gray-200/60 dark:border-gray-700/60",
+                    "bg-white/95 dark:bg-gray-900/95",
+                    "backdrop-blur-md",
+                    "shadow-xl",
                   )}
                 >
 
@@ -85,9 +87,9 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
                         "inset-0",
                         "overflow-scroll",
                         "h-full",
-                        "px-8",
+                        "px-6",
                         "absolute",
-                        "flex flex-col gap-6",
+                        "flex flex-col gap-4",
                         "py-6",
                       )}
                     >
@@ -119,12 +121,13 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
                   <div
                     className={clsx(
                       "border-t",
-                      "border-t-gray-300 dark:border-t-gray-700",
-                      "px-4",
-                      "py-2",
+                      "border-t-gray-200/60 dark:border-t-gray-700/60",
+                      "px-6",
+                      "py-4",
                       "flex",
                       "items-center",
                       "justify-between",
+                      "bg-gray-50/50 dark:bg-gray-800/50",
                     )}
                   >
                     <CommonHomeButton />

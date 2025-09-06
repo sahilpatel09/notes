@@ -12,7 +12,7 @@ import { ChevronDownIcon } from "./icons/chevron-down";
 import { DashIcon } from "./icons/dash";
 import { NewBadgePurple } from "./icons/new-badge-purple";
 
-const SIDEBAR_WIDTH = 260;
+const SIDEBAR_WIDTH = 280;
 
 const componentRegexp = /<([A-Z][a-z]+)\s?\/>/gi;
 
@@ -149,35 +149,37 @@ const SidebarCategory = ({
           "border-0",
           "appearance-none",
           "focus:outline-none",
-          !isHeader && "text-gray-400 dark:text-gray-300",
-          isHeader && "text-gray-500 dark:text-gray-400",
+          !isHeader && "text-gray-500 dark:text-gray-400",
+          isHeader && "text-gray-700 dark:text-gray-200",
           isHeader && "font-semibold",
-          !isHeader && "hover:text-gray-600 dark:hover:text-gray-300",
-          "font-normal",
+          !isHeader && "hover:text-gray-700 dark:hover:text-gray-200",
+          "font-medium",
           "flex items-center",
-          isHeader ? "pt-2 pb-4" : "py-2",
-          "pr-2",
-          isHeader && "pl-2",
-          !isHeader && "pl-0.5",
+          isHeader ? "pt-2 pb-3" : "py-2",
+          "pr-3",
+          isHeader && "pl-3",
+          !isHeader && "pl-1",
           isHeader ? "text-base" : "text-sm",
           "relative",
           !isHeader && "group",
-          "transition-colors duration-200 ease-in-out",
+          "transition-all duration-200 ease-in-out",
           !isHeader && "no-underline",
+          "rounded-lg",
         )}
       >
         {!isHeader && (
           <ChevronDownIcon
             className={clsx(
-              "opacity-70",
+              "opacity-80",
               isActive
-                ? "text-gray-500 dark:text-gray-400"
+                ? "text-gray-600 dark:text-gray-300"
                 : "text-gray-500 dark:text-gray-400",
-              "h-5 w-5",
+              "h-4 w-4",
               "flex-shrink-0",
               "z-[1]",
-              "transition-transform duration-200 ease-in-out",
-              "group-hover:text-gray-600 dark:group-hover:text-gray-300",
+              "transition-all duration-200 ease-in-out",
+              "group-hover:text-gray-700 dark:group-hover:text-gray-200",
+              "group-hover:scale-110",
               {
                 "-rotate-90 transform": collapsed,
               },
@@ -190,24 +192,25 @@ const SidebarCategory = ({
         <div
           className={clsx(
             "absolute",
-            "rounded-[18px]",
-            "transition-opacity",
+            "rounded-lg",
+            "transition-all",
             "duration-200 ease-in-out",
             "top-0",
             {
-              "group-hover:bg-gray-100 dark:group-hover:bg-gray-700":
+              "group-hover:bg-white/60 dark:group-hover:bg-gray-800/60":
                 !isActive && !isSame,
-              "bg-refine-blue-2-light dark:bg-refine-blue-2 dark:bg-opacity-10":
+              "bg-blue-50 dark:bg-blue-900/20":
                 isActive && isSame,
               "right-0": variant === "desktop",
               "-left-2": variant === "mobile",
             },
             "h-full",
+            "shadow-sm",
           )}
           style={{
             width:
               variant === "desktop"
-                ? `calc(${SIDEBAR_WIDTH}px - 32px)`
+                ? `calc(${SIDEBAR_WIDTH}px - 48px)`
                 : "calc(100% + 16px)",
           }}
         />
@@ -348,29 +351,29 @@ const SidebarLink = ({
         "relative",
         "min-h-[28px]",
         !isActive && "text-gray-600 dark:text-gray-300",
-        !isActive && "hover:text-gray-600 dark:hover:text-gray-300",
-        isActive &&
-          "text-refine-react-light-link dark:text-refine-react-dark-link",
-        "px-4 py-2",
-        "text-sm font-normal",
+        !isActive && "hover:text-gray-700 dark:hover:text-gray-200",
+        isActive && "text-blue-600 dark:text-blue-400",
+        "px-4 py-1.5",
+        "text-sm font-medium",
         "flex items-start justify-start",
-        dashed && !line && "pl-0.5",
+        dashed && !line && "pl-1",
         // SPACING
-        line && dashed && "pl-2",
-        line && "ml-[12px]",
+        line && dashed && "pl-3",
+        line && "ml-[16px]",
         "group",
-        "transition-colors duration-200 ease-in-out",
+        "transition-all duration-200 ease-in-out",
         "no-underline",
+        "rounded-lg",
         item.className,
       )}
     >
       {dashed && (
         <DashIcon
           className={clsx(
-            "z-[1] h-5 w-5 flex-shrink-0",
-            "text-gray-300 dark:text-gray-600",
-            isActive &&
-              "text-refine-react-light-link dark:text-refine-react-dark-link text-opacity-50 dark:text-opacity-50",
+            "z-[1] h-4 w-4 flex-shrink-0",
+            "text-gray-400 dark:text-gray-500",
+            isActive && "text-blue-500 dark:text-blue-400",
+            "transition-colors duration-200 ease-in-out",
           )}
         />
       )}
@@ -387,20 +390,20 @@ const SidebarLink = ({
       <div
         className={clsx(
           "absolute",
-          "rounded-[18px]",
-          "transition-opacity",
+          "rounded-lg",
+          "transition-all",
           "duration-200 ease-in-out",
           {
-            "group-hover:bg-gray-100 dark:group-hover:bg-gray-700":
+            "group-hover:bg-white/60 dark:group-hover:bg-gray-800/60":
               !isActive && !isSame,
-            "bg-refine-blue-2-light dark:bg-refine-blue-2 dark:bg-opacity-10":
+            "bg-blue-50 dark:bg-blue-900/20":
               isActive && isSame,
             "right-0": variant === "desktop",
-            // "-right-2": variant === "mobile",
             "-left-2": variant === "mobile",
           },
           "top-0",
           "h-full",
+          "shadow-sm",
         )}
         style={{
           width:
@@ -410,7 +413,7 @@ const SidebarLink = ({
         }}
       />
       {line && (
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 border-l border-l-gray-300 dark:border-l-gray-600 h-full w-px" />
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 border-l border-l-gray-200/60 dark:border-l-gray-600/60 h-full w-px" />
       )}
     </Link>
   );
@@ -453,7 +456,7 @@ const SidebarHtml = ({
       )}
     >
       {line && (
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 border-l border-l-gray-300 dark:border-l-gray-600 h-full w-px" />
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 border-l border-l-gray-200/60 dark:border-l-gray-600/60 h-full w-px" />
       )}
       <span
         className={clsx(
@@ -552,7 +555,9 @@ export const DocSidebar = () => {
         "left-0",
         "overflow-auto",
         "w-full",
-        // "scrollbar-slim",
+        "bg-gray-50/50 dark:bg-gray-900/50",
+        "backdrop-blur-sm",
+        "scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent",
       )}
       style={{
         maxWidth: `${SIDEBAR_WIDTH}px`,
@@ -562,10 +567,10 @@ export const DocSidebar = () => {
     >
       <div
         className={clsx(
-          "px-4",
-          "py-4",
-          "border-r border-r-gray-300 dark:border-r-gray-700",
-          "flex flex-col gap-6",
+          "px-6",
+          "py-6",
+          "border-r border-r-gray-200/60 dark:border-r-gray-700/60",
+          "flex flex-col gap-4",
         )}
       >
         {renderItems({

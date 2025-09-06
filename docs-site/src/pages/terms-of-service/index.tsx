@@ -1,5 +1,5 @@
 import Head from "@docusaurus/Head";
-import { BlogFooter } from "@site/src/refine-theme/blog-footer";
+import { CommonFooter } from "@site/src/refine-theme/common-footer";
 import { CommonHeader } from "@site/src/refine-theme/common-header";
 import { CommonLayout } from "@site/src/refine-theme/common-layout";
 import React from "react";
@@ -113,7 +113,7 @@ const TermsOfService: React.FC = () => {
             <a href="mailto:info@refine.dev">info@refine.dev</a>
           </p>
         </div>
-        <BlogFooter />
+        <CommonFooter />
       </div>
     </CommonLayout>
   );

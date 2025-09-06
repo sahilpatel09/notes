@@ -3,10 +3,8 @@ import { Dialog, Disclosure, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import React, { type FC, Fragment, type PropsWithChildren } from "react";
 import { useColorMode } from "@docusaurus/theme-common";
-import { openFigma } from "@site/src/utils/open-figma";
 import { CloseIcon } from "../icons/close";
 import { GithubStarIcon } from "../icons/popover";
-import { RefineLogoIcon } from "../icons/refine-logo";
 import { MENU_ITEMS, type NavbarItemType } from "./constants";
 import { MenuItem } from "./menu-item";
 import { MobileNavItem } from "./mobile-nav-item";
@@ -87,10 +85,7 @@ const Modal: FC<PropsWithChildren<MobileMenuModalProps>> = ({
                 "landing-sm:px-8",
               )}
             >
-              <RefineLogoIcon
-                className="dark:text-gray-0 text-gray-900"
-                onContextMenu={openFigma}
-              />
+              <span className="dark:text-gray-0 text-gray-900 text-xl font-bold">Notes</span>
               <button
                 type="button"
                 className={clsx(

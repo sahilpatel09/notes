@@ -22,7 +22,5 @@ logs: ## Show container logs
 shell: ## Open shell in running container
 	docker-compose exec docs-site sh
 
-sidebar: ## Regenerate sidebar based on docs directory structure
-	docker-compose exec docs-site node generate-sidebar.js
 
 default: help
