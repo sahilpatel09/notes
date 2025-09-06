@@ -1,0 +1,6 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1e293b"/>
+  <rect x="100" y="100" width="1000" height="430" rx="20" fill="#2563eb"/>
+  <text x="600" y="350" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="72" font-weight="bold">Notes</text>
+  <text x="600" y="400" text-anchor="middle" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="32">Personal Knowledge Base</text>
+</svg>

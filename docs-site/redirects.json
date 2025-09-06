@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    {
+      "from": "/docs/migration-guide/",
+      "to": "/docs/migration-guide/3x-to-4x/"
+    }
+  ]
+}
