@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "docs-site/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "docs-site/build"
       }
     }
   ],
@@ -19,8 +19,8 @@
       "dest": "/index.html"
     }
   ],
-  "buildCommand": "pnpm run build:vercel",
-  "outputDirectory": "build",
-  "installCommand": "pnpm install",
+  "buildCommand": "cd docs-site && pnpm run build:vercel",
+  "outputDirectory": "docs-site/build",
+  "installCommand": "cd docs-site && pnpm install",
   "framework": null
 }

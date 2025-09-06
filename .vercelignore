@@ -1,8 +1,9 @@
-node_modules
-.docusaurus
+docs-site/node_modules
+docs-site/.docusaurus
 *.log
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+website

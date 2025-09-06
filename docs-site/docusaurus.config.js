@@ -52,7 +52,7 @@ const siteConfig = {
         docs: process.env.DISABLE_DOCS
           ? false
           : {
-              path: "./docs",
+              path: "../docs",
               routeBasePath: "/",
               sidebarPath: require.resolve("./sidebars.js"),
               editUrl:
