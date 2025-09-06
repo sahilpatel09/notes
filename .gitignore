@@ -1,5 +1,9 @@
 # Dependencies
 /node_modules
+docs-site/node_modules
+docs-site/build
+docs-site/.cache-loader
+docs-site/.docusaurus
 
 # Production
 /build

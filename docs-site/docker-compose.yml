@@ -1,0 +1,24 @@
+services:
+  docs-site:
+    build: .
+    ports:
+      - "5006:5006"
+    volumes:
+      - .:/app
+      - ../docs:/app/docs
+      - /app/node_modules
+      - /app/.docusaurus
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+      - WATCHPACK_POLLING=true
+      - WATCHPACK_POLLING_INTERVAL=1000
+      - DISABLE_DOCGEN=true
+      - DISABLE_LIVE_PREVIEW=true
+      - DISABLE_SANDPACK=true
+      - DISABLE_BLOG=true
+      - DISABLE_VERSIONING=true
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
